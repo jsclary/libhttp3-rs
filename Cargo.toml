@@ -22,7 +22,7 @@ h3 = "0.0"
 h3-axum = "0"
 h3-quinn = "0.0"
 http = "1"
-quinn = "0.11"
+quinn = { version = "0.11", default-features = false, features = [ "runtime-tokio", "rustls-aws-lc-rs", "bloom" ] }
 rustls = { version = "0.23", features = ["aws-lc-rs"] }
 rustls-pemfile = "2"
 tokio = "1"
