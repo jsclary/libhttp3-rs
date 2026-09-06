@@ -14,9 +14,8 @@ pub async fn http3_serve(
     keypath: PathBuf,
 ) -> Result<()> {
     // Install default crypto provider
-    rustls::crypto::aws_lc_rs::default_provider()
-        .install_default()
-        .expect("Failed to install crypto provider");
+    let _ = rustls::crypto::aws_lc_rs::default_provider()
+        .install_default();
 
     // Load certificate and private key from files
     let cert_pem = fs::read_to_string(certpath)?;
